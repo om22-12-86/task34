@@ -67,3 +67,45 @@ RandomArr(array);
 PrintArray(array);
 Console.WriteLine();
 SummaOddIndex(array);
+
+// Задача 38: Задайте массив вещественных чисел. 
+// Найдите разницу между максимальным и минимальным элементов массива.
+// [3 7 22 2 78] -> 76
+
+void RandomArr(int[] arr)
+  {
+     for (int i = 0; i < arr.Length; i++)
+     {
+      arr[i] = new Random().Next(100, 999);
+     }
+  }
+ void PrintArray(int[] arr)
+  {
+     for (int i = 0; i < arr.Length; i++)
+     {
+      Console.Write($"{arr[i]} ");
+     }
+  }
+int DifferenceMaxMin(int[] arr)
+{
+    int max = arr[0];
+    var min = arr[0];
+    for (int i = 1; i < arr.Length; i++)
+        {
+            if (arr[i] < min) 
+             {
+                min = arr[i];
+             }    
+            if (arr[i] > max) 
+             {
+                max = arr[i];
+             }    
+        }
+        Console.WriteLine();
+        return (max - min);    
+}
+
+int[] array = new int[4];
+RandomArr(array);
+PrintArray(array);   
+Console.WriteLine(DifferenceMaxMin(array));
